@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 
+import Dashboard from "./components/Dashboard/Dashboard.js";
+
 class App extends Component {
   render() {
-    return <div />;
+    return (
+      <>
+        <Dashboard />
+      </>
+    );
   }
 }
 

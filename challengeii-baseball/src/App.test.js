@@ -14,4 +14,29 @@ describe("<App />", () => {
   it("renders successfully", () => {
     render(<App />);
   });
+
+  describe("STRIKES", () => {
+    it("Strike Button adds 1", () => {
+      const { getByText, debug } = render(<App />);
+
+      const button = getByText(/strike/i);
+
+      fireEvent.click(button);
+      debug();
+      getByText(/1/);
+    });
+  });
+
+  describe("RESET", () => {
+    it("Hit button resets stats to 0", () => {
+      const { getByText } = render(<App />);
+
+      const button = getByText(/hit/i);
+
+      fireEvent.click(button);
+      getByText(/strikes: 0/i);
+      getByText(/balls: 0/i);
+      getByText(/fouls: 0/i);
+    });
+  });
 });
