@@ -27,14 +27,28 @@ export default class Dashboard extends Component {
 
   strike = () => {
     this.setState({ ...this.state, strike: this.state.strike + 1 });
+    if (this.state.strike >= 2) {
+      this.reset();
+    }
   };
 
   ball = () => {
     this.setState({ ...this.state, ball: this.state.ball + 1 });
+    if (this.state.ball >= 3) {
+      this.reset();
+    }
   };
 
   foul = () => {
-    this.setState({ ...this.state, foul: this.state.foul + 1 });
+    if (this.state.strike < 2) {
+      this.setState({
+        ...this.state,
+        strike: this.state.strike + 1,
+        foul: this.state.foul + 1
+      });
+    } else {
+      this.setState({ ...this.state, foul: this.state.foul + 1 });
+    }
   };
 
   reset = () => {
