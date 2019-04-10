@@ -26,6 +26,29 @@ describe("<App />", () => {
     });
   });
 
+  describe("BALLS", () => {
+    it("Ball Button adds 1", () => {
+      const { queryByText, getByText } = render(<App />);
+
+      const button = queryByText("Ball");
+
+      fireEvent.click(button);
+      getByText(/1/);
+    });
+  });
+
+  describe("FOULS", () => {
+    it("Foul Button adds 1", () => {
+      const { queryByText, getByText } = render(<App />);
+
+      const button = queryByText("Foul");
+
+      fireEvent.click(button);
+      getByText(/1/);
+      getByText(/Fouls: 1/);
+    });
+  });
+
   describe("RESET", () => {
     it("Hit button resets stats to 0", () => {
       const { getByText } = render(<App />);
