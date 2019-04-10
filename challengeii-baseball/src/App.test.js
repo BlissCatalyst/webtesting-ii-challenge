@@ -17,12 +17,11 @@ describe("<App />", () => {
 
   describe("STRIKES", () => {
     it("Strike Button adds 1", () => {
-      const { getByText, debug } = render(<App />);
+      const { queryByText, getByText } = render(<App />);
 
-      const button = getByText(/strike/i);
+      const button = queryByText("Strike");
 
       fireEvent.click(button);
-      debug();
       getByText(/1/);
     });
   });

@@ -29,6 +29,14 @@ export default class Dashboard extends Component {
     this.setState({ ...this.state, strike: this.state.strike + 1 });
   };
 
+  ball = () => {
+    this.setState({ ...this.state, ball: this.state.ball + 1 });
+  };
+
+  foul = () => {
+    this.setState({ ...this.state, foul: this.state.foul + 1 });
+  };
+
   reset = () => {
     this.setState({ ...this.state, strike: 0, ball: 0, foul: 0 });
   };
