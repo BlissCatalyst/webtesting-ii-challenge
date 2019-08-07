@@ -1,0 +1,8 @@
+{
+  "name": "webtesting-ii-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BlissCatalyst/webtesting-ii-challenge.git",
+  "author": "Logan Hufstetler <logan.hufstetler@gmail.com>",
+  "license": "MIT"
+}
